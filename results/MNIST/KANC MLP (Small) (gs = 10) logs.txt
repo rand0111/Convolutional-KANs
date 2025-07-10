@@ -1,0 +1,2 @@
+Finished Trial with Hipers {'lr': 0.001, 'weight_decay': 0.0, 'batch_size': 128} and got accuracy 0.981 with epochs 19. Took 2560.674057126016 seconds 
+Finished Trial with Hipers {'lr': 0.001, 'weight_decay': 0.0, 'batch_size': 32} and got accuracy 0.97975 with epochs 8. Took 2764.3303160030046 seconds 

@@ -1,0 +1,1 @@
+Best trial config: {'accuracy': 0.9816666666666667, 'epochs': 9, 'loss': 0.0019785287082243787, 'lr': 0.001, 'weight_decay': 0.0, 'batch_size': 32}Best trial final validation loss: 0.0019785287082243787Best trial final validation accuracy: 0.9816666666666667Best trial final number of epochs: 9
