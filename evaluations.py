@@ -8,36 +8,36 @@ import subprocess
 import time
 
 
-def get_gpu_temperature():
-    try:
-        output = subprocess.check_output(
-            ['nvidia-smi', '--query-gpu=temperature.gpu', '--format=csv,noheader,nounits'],
-            encoding='utf-8'
-        )
-        temperatures = [int(line.strip()) for line in output.strip().split('\n')]
-        return max(temperatures)
-    except FileNotFoundError:
-        print("nvidia-smi not found. Is the NVIDIA driver installed?")
-    except subprocess.CalledProcessError as e:
-        print("Error running nvidia-smi:", e)
-    return None
+# def get_gpu_temperature():
+#     try:
+#         output = subprocess.check_output(
+#             ['nvidia-smi', '--query-gpu=temperature.gpu', '--format=csv,noheader,nounits'],
+#             encoding='utf-8'
+#         )
+#         temperatures = [int(line.strip()) for line in output.strip().split('\n')]
+#         return max(temperatures)
+#     except FileNotFoundError:
+#         print("nvidia-smi not found. Is the NVIDIA driver installed?")
+#     except subprocess.CalledProcessError as e:
+#         print("Error running nvidia-smi:", e)
+#     return None
 
 
-def wait_until_gpu_cools(threshold_temp=60, check_interval=10):
-    """
-    Waits until the GPU temperature drops below the specified threshold.
-    """
-    print(f"Waiting for GPU to cool below {threshold_temp}°C...")
-    while True:
-        temp = get_gpu_temperature()
-        if temp is None:
-            print("Could not read GPU temperature. Exiting.")
-            break
-        print(f"Current GPU Temp: {temp}°C")
-        if temp < threshold_temp:
-            print("GPU has cooled down. Proceeding.")
-            break
-        time.sleep(check_interval)
+# def wait_until_gpu_cools(threshold_temp=60, check_interval=10):
+#     """
+#     Waits until the GPU temperature drops below the specified threshold.
+#     """
+#     print(f"Waiting for GPU to cool below {threshold_temp}°C...")
+#     while True:
+#         temp = get_gpu_temperature()
+#         if temp is None:
+#             print("Could not read GPU temperature. Exiting.")
+#             break
+#         print(f"Current GPU Temp: {temp}°C")
+#         if temp < threshold_temp:
+#             print("GPU has cooled down. Proceeding.")
+#             break
+#         time.sleep(check_interval)
 
 
 def epoch(model, device, train_loader, optimizer, criterion):
@@ -90,7 +90,7 @@ def train(model, device, train_loader, optimizer, epoch_num, criterion):
     avg_loss = epoch(model, device, train_loader, optimizer, criterion)
 
     # print('Training set: Average loss: {:.6f}'.format(avg_loss))
-    wait_until_gpu_cools()
+    # wait_until_gpu_cools()
     return avg_loss
 
 
