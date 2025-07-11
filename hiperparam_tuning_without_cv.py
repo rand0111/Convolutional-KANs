@@ -61,56 +61,56 @@ if not os.path.exists(results_path):
 
 
 def train_all_kans(grid_size):
-    # search_hiperparams_and_get_final_model(  # ok
-    #     KANC_MLP,
-    #     True,
-    #     mnist_train,
-    #     test_loader,
-    #     max_epochs=20,
-    #     path=path,
-    #     search_grid_combinations=search_grid_combinations,
-    #     folds=1,
-    #     dataset_name=dataset_name,
-    #     grid_size=grid_size,
-    # )
-    # search_hiperparams_and_get_final_model( # OOM
-    #     KANC_MLP_Big,
-    #     True,
-    #     mnist_train,
-    #     test_loader,
-    #     max_epochs=20,
-    #     path=path,
-    #     search_grid_combinations=search_grid_combinations,
-    #     folds=1,
-    #     dataset_name=dataset_name,
-    #     grid_size=grid_size,
-    # )
-    # search_hiperparams_and_get_final_model( # OOM
-    #     KANC_MLP_Medium,
-    #     True,
-    #     mnist_train,
-    #     test_loader,
-    #     max_epochs=20,
-    #     path=path,
-    #     search_grid_combinations=search_grid_combinations,
-    #     folds=1,
-    #     dataset_name=dataset_name,
-    #     grid_size=grid_size,
-    # )
-    # search_hiperparams_and_get_final_model( # OOM
-    #     KKAN_Convolutional_Network,
-    #     True,
-    #     mnist_train,
-    #     test_loader,
-    #     max_epochs=20,
-    #     path=path,
-    #     search_grid_combinations=search_grid_combinations,
-    #     folds=1,
-    #     dataset_name=dataset_name,
-    #     grid_size=grid_size,
-    # )
+    search_hiperparams_and_get_final_model(  # ok
+        KANC_MLP,
+        True,
+        mnist_train,
+        test_loader,
+        max_epochs=20,
+        path=path,
+        search_grid_combinations=search_grid_combinations,
+        folds=1,
+        dataset_name=dataset_name,
+        grid_size=grid_size,
+    )
+    search_hiperparams_and_get_final_model( # OOM
+        KANC_MLP_Big,
+        True,
+        mnist_train,
+        test_loader,
+        max_epochs=20,
+        path=path,
+        search_grid_combinations=search_grid_combinations,
+        folds=1,
+        dataset_name=dataset_name,
+        grid_size=grid_size,
+    )
+    search_hiperparams_and_get_final_model( # OOM
+        KANC_MLP_Medium,
+        True,
+        mnist_train,
+        test_loader,
+        max_epochs=20,
+        path=path,
+        search_grid_combinations=search_grid_combinations,
+        folds=1,
+        dataset_name=dataset_name,
+        grid_size=grid_size,
+    )
+    search_hiperparams_and_get_final_model( # OOM
+        KKAN_Convolutional_Network,
+        True,
+        mnist_train,
+        test_loader,
+        max_epochs=20,
+        path=path,
+        search_grid_combinations=search_grid_combinations,
+        folds=1,
+        dataset_name=dataset_name,
+        grid_size=grid_size,
+    )
 
-    search_hiperparams_and_get_final_model(
+    search_hiperparams_and_get_final_model( # ok
         KKAN_Small,
         True,
         mnist_train,
