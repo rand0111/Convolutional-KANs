@@ -35,12 +35,14 @@ transform = transforms.Compose(
 search_grid_combinations = 2
 
 # Load MNIST and filter by classes
-mnist_train = MNIST(root="./data", train=True, download=True, transform=transform)
+dataset_train = MNIST(root="./data", train=True, download=True, transform=transform)
 
-mnist_test = MNIST(root="./data", train=False, download=True, transform=transform)
+dataset_test = MNIST(root="./data", train=False, download=True, transform=transform)
 
-test_loader = DataLoader(mnist_test, batch_size=64, shuffle=False)
-dataset_name = "MNIST"
+test_loader = DataLoader(dataset_test, batch_size=64, shuffle=False)
+dataset_name = "CIFAR-10" # CIFAR-100 # SVHN
+
+
 path = f"models/{dataset_name}"
 
 if not os.path.exists("models"):
@@ -64,7 +66,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model(  # ok
         KANC_MLP,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -76,7 +78,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model( # OOM
         KANC_MLP_Big,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -88,7 +90,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model( # OOM
         KANC_MLP_Medium,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -100,7 +102,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model( # OOM
         KKAN_Convolutional_Network,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -113,7 +115,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model( # ok
         KKAN_Small,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -126,7 +128,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model(
         NormalConvsKAN,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -139,7 +141,7 @@ def train_all_kans(grid_size):
     search_hiperparams_and_get_final_model(
         NormalConvsKAN_Medium,
         True,
-        mnist_train,
+        dataset_train,
         test_loader,
         max_epochs=20,
         path=path,
@@ -157,7 +159,7 @@ train_all_kans(grid_size=20)
 search_hiperparams_and_get_final_model(
     SimpleCNN,
     False,
-    mnist_train,
+    dataset_train,
     test_loader,
     max_epochs=20,
     path=path,
@@ -168,7 +170,7 @@ search_hiperparams_and_get_final_model(
 search_hiperparams_and_get_final_model(
     MediumCNN,
     False,
-    mnist_train,
+    dataset_train,
     test_loader,
     max_epochs=20,
     path=path,
@@ -179,7 +181,7 @@ search_hiperparams_and_get_final_model(
 search_hiperparams_and_get_final_model(
     CNN_Big,
     False,
-    mnist_train,
+    dataset_train,
     test_loader,
     max_epochs=20,
     path=path,
@@ -191,7 +193,7 @@ search_hiperparams_and_get_final_model(
 search_hiperparams_and_get_final_model(
     CNN_more_convs,
     False,
-    mnist_train,
+    dataset_train,
     test_loader,
     max_epochs=20,
     path=path,

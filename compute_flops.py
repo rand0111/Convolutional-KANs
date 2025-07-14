@@ -1,9 +1,9 @@
-#!git clone -b Colab https://github.com/AntonioTepsich/Convolutional-KANs.git
+# !git clone -b Colab https://github.com/AntonioTepsich/Convolutional-KANs.git
 # %cd Convolutional-KANs/
 #!git pull
 import sys
 
-# sys.path.insert(1,'Convolutional-KANs')
+sys.path.insert(1,'Convolutional-KANs')
 
 import os
 import torch

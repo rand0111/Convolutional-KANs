@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/hiperparam_tuning_without_cv.py", line 17, in <module>
+    import torchvision.transforms as transforms
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/__init__.py", line 6, in <module>
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/models/__init__.py", line 2, in <module>
+    from .convnext import *
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/models/convnext.py", line 8, in <module>
+    from ..ops.misc import Conv2dNormActivation, Permute
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/ops/__init__.py", line 23, in <module>
+    from .poolers import MultiScaleRoIAlign
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/ops/poolers.py", line 10, in <module>
+    from .roi_align import roi_align
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torchvision/ops/roi_align.py", line 4, in <module>
+    import torch._dynamo
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/__init__.py", line 2, in <module>
+    from . import convert_frame, eval_frame, resume_execution
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 40, in <module>
+    from . import config, exc, trace_rules
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/trace_rules.py", line 50, in <module>
+    from .variables import (
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/variables/__init__.py", line 4, in <module>
+    from .builtin import BuiltinVariable
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/variables/builtin.py", line 42, in <module>
+    from .ctx_manager import EventVariable, StreamVariable
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/variables/ctx_manager.py", line 12, in <module>
+    from ..device_interface import get_interface_for_device
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/_dynamo/device_interface.py", line 198, in <module>
+    for i in range(torch.cuda.device_count()):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 748, in device_count
+    nvml_count = -1 if torch.version.hip else _device_count_nvml()
+                                              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 709, in _device_count_nvml
+    raw_cnt = _raw_device_count_nvml()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/unnamed/Documents/diploma_proj/Convolutional-KANs/.venv/lib/python3.11/site-packages/torch/cuda/__init__.py", line 617, in _raw_device_count_nvml
+    rc = nvml_h.nvmlInit()
+         ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
